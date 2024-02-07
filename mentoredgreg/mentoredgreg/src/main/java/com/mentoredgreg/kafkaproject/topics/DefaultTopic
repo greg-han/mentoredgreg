@@ -1,4 +1,4 @@
-package com.mentoredgreg.kafkaproject
+package com.mentoredgreg.kafkaproject.topics
 
 @Bean
 NewTopic defaultTopic(){

@@ -1,6 +1,5 @@
-package com.mentoredgreg.kafkaproject
+package com.mentoredgreg.kafkaproject.controllers
 
-import com.mentoredgreg.kafkaproject.kafka.KafkaProducer
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 //Here you might be able to producer other messages.
 @RestController
-@RequestMapping("/api/v1/kafkaproducer)
+@RequestMapping("/api/")
 public class MessageController { 
 
 	private KafkaProducer kafkaProducer;

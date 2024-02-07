@@ -1,0 +1,14 @@
+
+
+//This is a listener that is always on.
+//Whatever you put in this method will execute whenever
+//a new message comes in. Ideally, this will be where you integrate Solr
+@Component
+class KafkaConsumer{
+
+    @KafkaListener(topics = {"default"}, groupId = "testGroup")
+    public void consume(String quote){
+        System.out.println("received: " + quote);
+    }
+
+}

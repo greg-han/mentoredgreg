@@ -1,0 +1,8 @@
+package com.mentoredgreg.kafkaproject
+
+@Bean
+NewTopic defaultTopic(){
+   return TopicBuilder.name("default")
+        .partitions(10)
+        .build();
+}

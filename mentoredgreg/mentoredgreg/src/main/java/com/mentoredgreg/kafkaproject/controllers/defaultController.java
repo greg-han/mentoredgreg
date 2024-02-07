@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class defaultController {
 
+    @GetMapping("/")
+    public void defaultMap(){
+        System.out.println("Ok!");
+    }
     @GetMapping("/error")
     public ResponseEntity<String> publish (){
        System.out.println("Error!");
 
         ResponseEntity<String> error = ResponseEntity.ok("Error");
-        return error;
+        return  error;
     }
 }

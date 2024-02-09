@@ -21,14 +21,8 @@ public class producerController {
         return this.kafkaProducer;
     }
 
-    @GetMapping("/test")
-    public void test(){
-        System.out.println("Thisworks");
-    }
-
     @GetMapping("/produce")
     public ResponseEntity<String> publish (@RequestParam("message") String message){
-        System.out.println("This also works");
         kafkaProducer.sendMessage(message);
         return ResponseEntity.ok("We are kafka-ing");
     }

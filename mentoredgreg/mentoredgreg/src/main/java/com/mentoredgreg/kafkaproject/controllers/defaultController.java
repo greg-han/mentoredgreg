@@ -15,15 +15,9 @@ public class defaultController {
     public void defaultMap(){
         System.out.println("Ok!");
     }
-
-    @GetMapping("/test")
-    public void test(){
-        System.out.println("Thisworks");
-    }
     @GetMapping("/error")
     public ResponseEntity<String> publish (){
-       System.out.println("Error!");
-
+        System.out.println("Error!");
         ResponseEntity<String> error = ResponseEntity.ok("Error");
         return  error;
     }

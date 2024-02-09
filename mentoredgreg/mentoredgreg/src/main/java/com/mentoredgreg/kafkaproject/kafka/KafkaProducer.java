@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
         private String topicName;
 
         private final KafkaTemplate<String, String> kafkaTemplate;
-
         public KafkaProducer(KafkaTemplate<String, String> kafkaTemplate){
             this.kafkaTemplate = kafkaTemplate;
         }

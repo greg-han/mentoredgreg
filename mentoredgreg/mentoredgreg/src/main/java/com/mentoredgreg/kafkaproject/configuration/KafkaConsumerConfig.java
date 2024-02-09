@@ -24,8 +24,8 @@ public ConsumerFactory<String, String> consumerFactory(){
 @Bean
 public Map<String, Object> consumerProperties() {
     return Map.of(
-            ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092",
-            GROUP_ID_CONFIG, "spring-ccloud",
+            ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:29092",
+            GROUP_ID_CONFIG, "testGroup",
             ENABLE_AUTO_COMMIT_CONFIG, false,
             SESSION_TIMEOUT_MS_CONFIG, 15000,
             KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class,

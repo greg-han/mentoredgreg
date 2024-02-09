@@ -9,10 +9,8 @@ import org.springframework.stereotype.Component;
 //or where a Solr calling service will be called.
 @Component
 public class KafkaConsumer{
-/*
     @KafkaListener(topics = {"default"}, groupId = "testGroup")
     public void consume(String quote){
         System.out.println("received: " + quote);
     }
-*/
 }

@@ -20,7 +20,7 @@ public class KafkaProducerConfig {
     @Bean
     public ProducerFactory<String, String> producerFactory() {
         return new DefaultKafkaProducerFactory<>(
-                Map.of(BOOTSTRAP_SERVERS_CONFIG, "localhost:9092",
+                Map.of(BOOTSTRAP_SERVERS_CONFIG, "localhost:29092",
                         RETRIES_CONFIG, 0,
                         BUFFER_MEMORY_CONFIG, 33554432,
                         KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class,

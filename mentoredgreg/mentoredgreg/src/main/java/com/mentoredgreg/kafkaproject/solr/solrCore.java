@@ -6,7 +6,7 @@ import java.io.IOException;
 
 
 public class solrCore {
-    String testCore = "testCore";
+    String testCore = "bookCore";
     public static void getNewCore(String coreName) throws SolrServerException, IOException {
         CoreAdminRequest.Create newCore = new CoreAdminRequest.Create();
         newCore.setCoreName(coreName);

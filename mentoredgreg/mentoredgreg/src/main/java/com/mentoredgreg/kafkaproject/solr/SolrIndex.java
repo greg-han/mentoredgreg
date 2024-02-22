@@ -6,6 +6,7 @@ import org.apache.solr.common.SolrInputDocument;
 import org.apache.solr.common.util.ContentStreamBase.StringStream;
 import org.apache.solr.client.solrj.request.UpdateRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
@@ -22,14 +23,15 @@ public class SolrIndex {
         this.solrClient = solrClient;
     }
 
-    public  void updateXML(String xmlString) throws SolrServerException, IOException {
+    @Async
+    public void updateXML(String xmlString) throws SolrServerException, IOException {
         HttpSolrClient client = solrClient.getClient();
         UpdateRequest updateReq = new UpdateRequest();
         SolrInputDocument inputDoc = new SolrInputDocument();
         StringStream stringStream = new StringStream(xmlString, "xml");
-       // stringStream.setContentType("application/xml");
+        //stringStream.setContentType("application/xml");
 
-        inputDoc.addField("xml",stringStream);
+        inputDoc.addField("book",stringStream);
 
         updateReq.add(inputDoc);
         updateReq.commit(client,"bookCollection");

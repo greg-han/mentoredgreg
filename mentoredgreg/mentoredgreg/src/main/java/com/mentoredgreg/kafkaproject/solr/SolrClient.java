@@ -9,8 +9,8 @@ public class SolrClient {
 
     //@Value("${spring.kafka.solr.collection.name}")
     public static HttpSolrClient getClient(){
-        String urlString = "http://localhost:8983/solr/";
-        //String urlString = "http://localhost:8983/solr/" + "bookCollection";
+        //String urlString = "http://localhost:8983/solr/";
+        String urlString = "http://localhost:8983/solr/" + "bookCollection";
         HttpSolrClient solr = new HttpSolrClient
                 .Builder(urlString)
                 .withResponseParser(new InputStreamResponseParser("application/xml"))

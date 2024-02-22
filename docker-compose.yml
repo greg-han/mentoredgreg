@@ -25,7 +25,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
   solr:
-    image: solr:9.4.1
+    image: solr:7.7.1
     depends_on:
       - zookeeper
     ports:

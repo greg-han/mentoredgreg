@@ -19,6 +19,7 @@ public class SolrCollection {
     public void createNewCollection(String collectionName) throws SolrServerException, IOException {
         CollectionAdminRequest.Create newCollection = CollectionAdminRequest
                 .Create.createCollection("bookCollection",2,2);
+
         try {
             newCollection.process(solrClient.getClient());
         } catch (SolrServerException e) {

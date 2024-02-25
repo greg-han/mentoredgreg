@@ -1,6 +1,7 @@
 package com.mentoredgreg.kafkaproject.kafka;
 
 import com.mentoredgreg.kafkaproject.solr.SolrClient;
+import com.mentoredgreg.kafkaproject.solr.SolrCollection;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -16,22 +17,24 @@ import java.io.IOException;
 //or where a Solr calling service will be called.
 @Component
 public class KafkaConsumer{
-
-    private SolrIndex solrIndex;
-
+    SolrIndex solrIndex;
+    SolrCollection solrCollection;
     @Autowired
-    public KafkaConsumer(SolrIndex solrIndex) {
+
+    public KafkaConsumer(SolrIndex solrIndex, SolrCollection solrCollection){
         this.solrIndex = solrIndex;
+        this.solrCollection = solrCollection;
     }
     @KafkaListener(topics = {"firstTopic"}, groupId = "testGroup")
-    @Async
     public void consume(String quote) throws SolrServerException, IOException {
         System.out.println("received: " + quote);
         try {
+            //This will be replaced with a conditional that checks if the collection exists.
             //solrCollection.createNewCollection("bookCollection");
-            //Put this in a POJO, and then use a DB call from there.
-            //I think that this particular line is causing issues.
+
+            //This might be put into a POJO before being sent solrIndex.updateXML()
             solrIndex.updateXML(quote);
+            System.out.println("I'm done");
 
         } catch (SolrServerException e) {
             throw new RuntimeException(e);

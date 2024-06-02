@@ -25,7 +25,6 @@ public class SolrIndex {
     public SolrIndex(SolrClient solrClient) {
         this.solrClient = solrClient;
     }
-
     //I believe that the errors are contained within this function.
     //The collection does get created, but documents are not being uploaded to it.
     //I'm also confused about the type of stream, if any, that needs to be created before adding.

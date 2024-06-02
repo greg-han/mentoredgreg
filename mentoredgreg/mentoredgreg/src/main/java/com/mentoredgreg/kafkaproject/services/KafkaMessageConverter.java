@@ -1,14 +1,12 @@
 package com.mentoredgreg.kafkaproject.services;
 
 import com.mentoredgreg.kafkaproject.model.BookList;
-//import com.mentoredgreg.kafkaproject.solr.SolrIndex;
 import com.mentoredgreg.kafkaproject.solr.SolrIndex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 import com.mentoredgreg.kafkaproject.model.BookList;
-///import com.mentoredgreg.kafkaproject.solr.SolrIndex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;

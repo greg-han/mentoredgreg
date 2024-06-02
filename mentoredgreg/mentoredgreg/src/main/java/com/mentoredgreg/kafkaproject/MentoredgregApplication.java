@@ -10,7 +10,7 @@ import org.springframework.kafka.config.TopicBuilder;
 //@SpringBootApplication(scanBasePackages = {"com.mentoredgreg.kafkaproject","com.mentoredgreg.kafkaproject.services"})
 @SpringBootApplication
 public class MentoredgregApplication {
-
+   //testing pointer
 	public static void main(String[] args) {
 		SpringApplication.run(MentoredgregApplication.class, args);
 	}

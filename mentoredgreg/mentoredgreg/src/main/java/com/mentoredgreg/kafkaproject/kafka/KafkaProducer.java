@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
         }
 
         public void sendMessage(String message){
-            kafkaTemplate.send(topicName, message);
+            kafkaTemplate.send(topicName, (String) message);
         }
 
     }

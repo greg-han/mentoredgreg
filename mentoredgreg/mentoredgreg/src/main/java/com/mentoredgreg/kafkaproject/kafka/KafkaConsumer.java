@@ -1,6 +1,5 @@
 package com.mentoredgreg.kafkaproject.kafka;
 
-import com.mentoredgreg.kafkaproject.model.Song;
 import com.mentoredgreg.kafkaproject.solr.SolrIndex;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +14,9 @@ public class KafkaConsumer{
     public KafkaConsumer(SolrIndex solrIndex){
         this.solrIndex = solrIndex;
     }
-    @KafkaListener(topics = {"firstTopic"}, groupId = "testGroup")
+    @KafkaListener(topics = {"musicTopic"}, groupId = "musicGroup")
     public void consume(String song) throws SolrServerException, IOException {
         solrIndex.indexJSON(song);
-        //System.out.println(song);
+        System.out.println(song);
     }
 }

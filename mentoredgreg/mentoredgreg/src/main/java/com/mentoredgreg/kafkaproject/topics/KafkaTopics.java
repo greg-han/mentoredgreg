@@ -22,7 +22,7 @@ public class KafkaTopics {
     }
     @Bean
     public NewTopic defaultTopic() {
-        return TopicBuilder.name("firstTopic")
+        return TopicBuilder.name("musicTopic")
                 .partitions(10)
                 .build();
     }

@@ -3,6 +3,7 @@ package com.mentoredgreg.kafkaproject.solr;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mentoredgreg.kafkaproject.model.Song;
 import org.apache.solr.client.solrj.SolrServerException;
+import org.apache.solr.client.solrj.impl.CloudSolrClient;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.UpdateResponse;
 import org.apache.solr.common.SolrInputDocument;
@@ -27,15 +28,16 @@ public class SolrIndex {
     }
 
     public void indexJSON(String songMessage) throws SolrServerException, IOException {
-        HttpSolrClient client = solrClient.getClient();
+        //Change this to cloud solr
+        CloudSolrClient client = solrClient.getCloudClient();
         ObjectMapper mapper = new ObjectMapper();
         Song songModel = mapper.readValue(songMessage, Song.class);
         System.out.println(songModel);
 
         //final Song song = new Song(songModel.getName(), songModel.getAlbum(), songModel.getLyrics());
-        final UpdateResponse response = client.addBean("songCollection", songModel);
-
-        client.commit("songCollection");
+        final UpdateResponse response = client.addBean("musicCollection", songModel);
+        System.out.println(response);
+        client.commit("musicCollection");
 
     }
 

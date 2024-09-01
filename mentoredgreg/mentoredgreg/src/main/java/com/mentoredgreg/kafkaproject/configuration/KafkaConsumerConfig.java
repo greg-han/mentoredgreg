@@ -25,7 +25,7 @@ public ConsumerFactory<String, String> consumerFactory(){
 public Map<String, Object> consumerProperties() {
     return Map.of(
             ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:29092",
-            GROUP_ID_CONFIG, "testGroup",
+            GROUP_ID_CONFIG, "musicGroup",
             ENABLE_AUTO_COMMIT_CONFIG, false,
             SESSION_TIMEOUT_MS_CONFIG, 15000,
             KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class,

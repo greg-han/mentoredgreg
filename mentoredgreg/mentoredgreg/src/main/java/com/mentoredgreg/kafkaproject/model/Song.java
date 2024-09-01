@@ -1,13 +1,17 @@
 package com.mentoredgreg.kafkaproject.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.solr.client.solrj.beans.Field;
 
 public class Song {
     @Field
+    //@JsonProperty("NAME")
     private String name;
     @Field
+    //@JsonProperty("ALBUM")
     private String album;
     @Field
+    //@JsonProperty("LYRICS")
     private String lyrics;
 
     public Song(){

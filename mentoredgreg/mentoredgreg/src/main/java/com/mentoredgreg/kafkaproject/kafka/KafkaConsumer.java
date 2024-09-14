@@ -17,6 +17,7 @@ public class KafkaConsumer{
     @KafkaListener(topics = {"musicTopic"}, groupId = "musicGroup")
     public void consume(String song) throws SolrServerException, IOException {
         solrIndex.indexJSON(song);
+        //solrIndex.querySolr();
         System.out.println(song);
     }
 }
